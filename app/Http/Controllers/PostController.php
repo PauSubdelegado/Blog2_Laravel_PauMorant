@@ -69,4 +69,6 @@ public function update(PostRequest $request, $id)
 
     return redirect()->route('posts.index');
 }
+
+
 }
