@@ -14,7 +14,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $credencials = $request->only('login', 'password');
+        $credencials = $request->only('name', 'password');
 
         if (Auth::attempt($credencials)) {
             return redirect()->intended(route('posts.index'));

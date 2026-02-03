@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('plantilla')
 
-@section('content')
+@section('titulo', 'Login')
+@section('contenido')
 <h1>Login</h1>
 
 @if (!empty($error))
@@ -11,7 +12,7 @@
     @csrf
 
     <label>Login</label>
-    <input type="text" name="login">
+    <input type="text" name="name">
 
     <label>Password</label>
     <input type="password" name="password">

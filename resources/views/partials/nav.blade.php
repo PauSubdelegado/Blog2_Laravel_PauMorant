@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Laravel Pau</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -25,11 +24,23 @@
           Crear ficha
         </a>
       </li>
+      @if(auth()->guest())
+        <li>
+          <a class="nav-link" href="{{ route('login') }}">Login</a>
+        </li>
+      @else
+        <li>
+          {{ auth()->user()->login }}
+          <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+        </li>
+      @endif
+
+      </li>
 
     </ul>
 
     <span class="navbar-text text-white">
-        {{ fechaActual('d/m/Y') }}
+      {{ fechaActual('d/m/Y') }}
     </span>
 
   </div>
